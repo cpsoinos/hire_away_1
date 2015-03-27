@@ -1,28 +1,75 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+USER STORIES:
 
-Things you may want to cover:
+As an admin
+I want to go to an index page
+So that I can see all current and future events
 
-* Ruby version
+As an admin
+I want to create a new event
+So that I can plan what I need for it
 
-* System dependencies
+As an admin
+I want to attach a file to anything
+So that I can access it quickly later
 
-* Configuration
+As an admin
+I want to copy a past event
+So that I can re-use the same template
 
-* Database creation
+As an admin
+I want to plan an event
+So that I may offer jobs to users
 
-* Database initialization
+As a user
+I want to receive an email with job offers
+So that I can get hired
 
-* How to run the test suite
+As a user
+I want to click a button in an email
+So that I can let the admins know I'm interested in a job
 
-* Services (job queues, cache servers, search engines, etc.)
+As an admin
+I want to see who responds to job offers
+So that I may hire or ignore them
 
-* Deployment instructions
+As an admin
+I want to be able to send an email
+So that I can let users know a position has been filled
 
-* ...
+As a user
+I want to clock in and out
+So that I can get paid
 
+As an admin
+I want to view users' timecards
+So that I may pay them
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+As an admin
+I want to edit users' timecards
+So that I can correctly and legally pay them
+
+As an admin
+I want to send a notification email
+So that users know when I change their position or hours
+
+As an admin
+I want to edit an event
+So that I can react to changes
+
+As an admin
+I want to send out calls for open positions
+So that I can fill those positions
+
+As a user
+I want to receive an email if my job has changed
+So that I can prepare for it
+
+As an admin
+I want to generate an event report
+So that I can view details about past events
+
+As an admin
+I want to generate a user report
+So that I can vie details about a user
