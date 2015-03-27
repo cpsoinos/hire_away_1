@@ -6,6 +6,7 @@ feature 'user registers', %Q{
   So that I can create an account
 } do
 
+  let!(:user) { FactoryGirl.create(:user) }
   # Acceptance Criteria:
   # * I must specify a valid email address,
   #   password, and password confirmation
@@ -18,6 +19,14 @@ feature 'user registers', %Q{
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
+    fill_in 'First name', with: user.first_name
+    fill_in 'Last name', with: user.last_name
+    fill_in 'Street address', with: user.street_address
+    fill_in 'user_street_address2', with: user.street_address2
+    fill_in 'City', with: user.city
+    select 'Massachusetts', from: 'user_state'
+    fill_in 'Zip', with: user.zip
+    fill_in 'Phone', with: user.phone
 
     click_button 'Sign up'
 
