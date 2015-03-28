@@ -1,6 +1,10 @@
 <h1>Add a New Event</h1>
 
-<%= form_for @event do |f| %>
+<%= form_for [@event, @location] do |f| %>
+  <% @event.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -12,12 +16,17 @@
   </div>
 
   <div class="field">
+    <%= f.label :location %><br>
+    <%= f.select :location_name, options_for_select(@locations) %>
+  </div>
+
+  <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time, :ampm => true, :minute_step => 15 %>  </div>
+    <%= f.datetime_select :start_time, :ampm => true %>  </div>
 
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time, :ampm => true, :minute_step => 15 %>  </div>
+    <%= f.datetime_select :end_time, :ampm => true %>  </div>
 
   <div class="actions">
     <%= f.submit %>

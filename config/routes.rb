@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :events
+  resources :events, only: [:new] do
+    resources :locations, only: [:new, :create]
+  end
 end

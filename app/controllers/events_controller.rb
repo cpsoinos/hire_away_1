@@ -5,17 +5,19 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @locations = Location.all
+    @location = Location.new
   end
 
   def create
+    # @company = Company.new(params[:company])
+    # @company.company_name = params[:new_company_name] unless params[:new_company_name].empty?
     @event = Event.create(event_params)
     if @event.save
       flash[:alert] = "Event added!"
       redirect_to event_path(@event)
     else
-      flash[:error] = "Uh-oh! #{@event.errors}"
-      binding.pry
-      redirect_to :back
+      render :action=>'new'
     end
   end
 
@@ -26,6 +28,7 @@ class EventsController < ApplicationController
       :description,
       :start_time,
       :end_time,
-      :location_id)
+      :location_id
+      )
   end
 end

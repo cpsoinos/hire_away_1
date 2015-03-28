@@ -1,11 +1,12 @@
 <h1>Events</h1>
-<% binding.pry %>
 <% if current_user.try(:admin?) %>
-  <p><%= link_to "Add Event", new_event_path %>
+  <p><%= button_to "Add Event", new_event_path, {:method => :get } %>
   <ul>
     <% @events.each do |event| %>
       <li><%= event.name %></li>
       <li><%= event.location.name %></li>
+      <li><%= event.start_time %></li>
+      <li><%= event.end_time %></li>
     <% end %>
   </ul>
 <% end %>
