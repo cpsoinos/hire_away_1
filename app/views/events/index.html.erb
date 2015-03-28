@@ -1,0 +1,11 @@
+<h1>Events</h1>
+<% binding.pry %>
+<% if current_user.try(:admin?) %>
+  <p><%= link_to "Add Event", new_event_path %>
+  <ul>
+    <% @events.each do |event| %>
+      <li><%= event.name %></li>
+      <li><%= event.location.name %></li>
+    <% end %>
+  </ul>
+<% end %>

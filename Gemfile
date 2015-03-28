@@ -40,6 +40,7 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'faker'
+  gem 'pry'
 end
 
 
@@ -52,3 +53,4 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
 gem 'country_state_select'
+gem 'will_paginate'
