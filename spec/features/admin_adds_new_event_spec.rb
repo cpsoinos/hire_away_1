@@ -34,6 +34,7 @@ feature 'admin adds new event', %Q{
     visit new_event_path
     fill_in "Name", with: event.name
     fill_in "Description", with: event.description
+    select "Park Plaza Castle", from: "location"
     select "2015", from: "event_start_time_1i"
     select "April", from: "event_start_time_2i"
     select "26", from: "event_start_time_3i"

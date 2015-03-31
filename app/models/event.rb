@@ -12,6 +12,5 @@ class Event < ActiveRecord::Base
   validates :end_time,
     presence: true
   validates :location_id,
-    presence: true,
-    uniqueness: true
+    presence: true
 end

@@ -3,7 +3,7 @@
   <p><%= button_to "Add Event", new_event_path, {:method => :get } %>
   <ul>
     <% @events.each do |event| %>
-      <li><%= event.name %></li>
+      <li><%= link_to event.name, event_path(event) %></li>
       <li><%= event.location.name %></li>
       <li><%= event.start_time %></li>
       <li><%= event.end_time %></li>

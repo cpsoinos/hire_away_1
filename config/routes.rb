@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :events
   resources :events, only: [:new] do
-    resources :locations, only: [:new, :create]
+    resources :locations, only: [:new, :create, :index]
   end
 end

@@ -16,7 +16,6 @@ class LocationsController < ApplicationController
     params.require(:location).permit(
       :name, :address, :city, :state,
       :contact_name, :contact_phone,
-      :contact_email,
-      :event_id
+      :contact_email
       )
 end

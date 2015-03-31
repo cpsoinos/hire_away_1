@@ -3,16 +3,22 @@ class EventsController < ApplicationController
     @events = Event.page(params[:page])
   end
 
+  def show
+    @event = Event.find(params[:id])
+    @map_params = "#{@event.location.address}+#{@event.location.city}+#{@event.location.state}".gsub(/ /, "+")
+    binding.pry
+  end
+
   def new
     @event = Event.new
     @locations = Location.all
-    @location = Location.new
   end
 
   def create
-    # @company = Company.new(params[:company])
-    # @company.company_name = params[:new_company_name] unless params[:new_company_name].empty?
-    @event = Event.create(event_params)
+    @locations = Location.all
+    @location = Location.find_by(params[:location_id])
+    @event = @location.events.new(event_params)
+    binding.pry
     if @event.save
       flash[:alert] = "Event added!"
       redirect_to event_path(@event)
@@ -27,8 +33,7 @@ class EventsController < ApplicationController
       :name,
       :description,
       :start_time,
-      :end_time,
-      :location_id
+      :end_time
       )
   end
 end
